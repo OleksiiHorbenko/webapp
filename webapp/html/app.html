@@ -1,0 +1,44 @@
+<div ng-controller="appPageController" ng-cloak>
+
+
+        <md-toolbar class="md-menu-toolbar">
+            <div layout="row">
+                <div>
+                    <!--<md-button ng-click="openLeftMenu()" aria-label="First Button">-->
+                    <!--LEFT MENU-->
+                    <!--</md-button>-->
+                    <!--<md-menu-bar>-->
+
+                    <!--<md-menu>-->
+                    <!--<md-button ng-click="openLeftMenu()" aria-label="First Button">-->
+                    <!--LEFT MENU-->
+                    <!--</md-button>-->
+                    <!--</md-menu>-->
+
+                    <!--</md-menu-bar>-->
+                </div>
+            </div>
+        </md-toolbar>
+
+
+
+
+
+    <!--CONTENT-->
+
+    <div ng-include="getContentPage()"></div>
+
+</div>
+
+
+<!--SIDE NAV-->
+<div ng-controller="appPageController">
+    <div class="container container-fluid">
+        <div id="sideNavContainer" layout="row" ng-cloak>
+            <md-sidenav md-component-id="left" class="md-sidenav-left">
+                Actions here
+            </md-sidenav>
+        </div>
+    </div>
+</div>
+

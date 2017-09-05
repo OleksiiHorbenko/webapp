@@ -1,0 +1,132 @@
+<div>
+    <md-content>
+        <md-card>
+            <md-toolbar class="md-primary md-hue-6 ">
+
+                <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+
+                    <h1 class="md-flex">Scramblers</h1>
+
+                </div>
+            </md-toolbar>
+            <md-content layout-margin>
+
+
+                <div ng-cloak>
+
+                    <md-content>
+                        <md-tabs md-dynamic-height md-border-bottom>
+
+                            <md-tab label="Caesar">
+                                <md-content class="md-padding">
+
+                                    <div ng-controller="caesarController">
+                                        <form name="projectForm">
+
+                                            <!--PAYLOAD-->
+                                            <md-input-container class="md-block">
+                                                <label>Data here:</label>
+                                                <textarea ng-model="payload" md-maxlength="500" rows="10"
+                                                          required></textarea>
+                                            </md-input-container>
+
+                                            <!--KEY-->
+                                            <md-input-container class="md-block">
+                                                <label>Key</label>
+                                                <input type="text" ng-model="key" required>
+                                            </md-input-container>
+
+                                            <br>
+                                            <hr>
+                                            <input type="file" on-read-file="showContent($fileContent)"/>
+
+                                            <div>
+                                                <md-button type="submit" ng-click="caesarEncode()">Encode</md-button>
+                                                <md-button type="submit" ng-click="caesarDecode()">Decode</md-button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+                                </md-content>
+                            </md-tab>
+
+
+                            <md-tab label="Trithemius">
+                                <md-content class="md-padding">
+
+                                    <div ng-controller="trithemiusController">
+                                        <form name="projectForm">
+
+                                            <!--PAYLOAD-->
+                                            <md-input-container class="md-block">
+                                                <label>Data here:</label>
+                                                <textarea ng-model="payload" md-maxlength="500" rows="10"
+                                                          required></textarea>
+                                            </md-input-container>
+
+                                            <!--KEY-->
+                                            <div layout="row">
+                                                <div flex="80">
+                                                    <md-input-container class="md-block">
+                                                        <label>Key</label>
+                                                        <input type="text" ng-model="key" required>
+                                                    </md-input-container>
+                                                </div>
+                                                <!--FUNCTION TYPE-->
+                                                <div flex="20">
+                                                    <md-input-container>
+                                                        <label>Function type</label>
+                                                        <md-select ng-model="functionType">
+                                                            <md-option ng-repeat="funcType in functionTypeArray"
+                                                                       ng-value="funcType">
+                                                                {{funcType}}
+                                                            </md-option>
+                                                        </md-select>
+                                                    </md-input-container>
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <md-input-container class="md-block">
+                                                <label>Motto</label>
+                                                <input type="text" ng-model="motto">
+                                            </md-input-container>
+
+
+                                            <br>
+                                            <hr>
+                                            <input type="file" on-read-file="showContent($fileContent)"/>
+
+                                            <div>
+                                                <md-button type="submit" ng-click="trithemiusEncode()">Encode
+                                                </md-button>
+                                                <md-button type="submit" ng-click="trithemiusDecode()">Decode
+                                                </md-button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+                                </md-content>
+                            </md-tab>
+
+
+                        </md-tabs>
+                    </md-content>
+                </div>
+
+
+            </md-content>
+
+        </md-card>
+
+
+        <div>
+            <md-subheader class="md-no-sticky">Author: Horbenko Oleksii</md-subheader>
+        </div>
+
+    </md-content>
+</div>
+
+
